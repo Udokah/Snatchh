@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /Snatchh!/
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^home/?$ index.php [NC,L]
+	RewriteRule ^faq/?$ faq.php [NC,L]
+	RewriteRule ^search/?$ search.php [NC,L]
+    RewriteRule ^place-free-ad/?$ placead.php [NC,L]
+	RewriteRule ^category/?$ error.php [NC,L]
+	RewriteRule ^category/(.+)$ category.php?cat=$1 [NC,L]
+	RewriteRule ^([0-9]+)/(.+)/?$ listing.php/(.+)/?lid=$1 [NC,L]
+	RewriteRule ^listing.php/?$ error.php [NC,L]
+	RewriteRule ^manage/?$ error.php [NC,L]
+	RewriteRule ^manage/(.+)$ manage.php?cat=$1 [NC,L]
+    RewriteRule ^feedback/?$ feedback.php [NC,L]
+    RewriteRule ^about/?$ about.php [NC,L]
+    RewriteRule ^terms/?$ terms.php [NC,L]
+</IfModule>
